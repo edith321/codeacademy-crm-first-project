@@ -16,3 +16,6 @@ Route::get('/persons', [
     'uses' => 'AprPersonsController@index'
 ]);
 
+Route::get('/generate-fake-data/persons/{count?}', [
+    'uses' => 'AprFakeDataController@generatePersons'
+]);
