@@ -13,7 +13,11 @@ class AprPersonsController extends Controller {
 	 */
 	public function index()
 	{
-		return AprPersons::get();
+		return AprPersons::orderBy('created_at', 'desc')//builder
+            //->where('count' > 5)//builder
+            ->select('id','name', 'e-mail')//builder
+            ->get();//data
+
 	}
 
 	/**

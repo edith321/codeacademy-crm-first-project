@@ -14,16 +14,14 @@ class AprFakeDataController extends Controller
         $data = [];
 
         for ($i = 0; $i < $count; $i++) {
-            $data[] =
+            AprPersons::create($data[] =
                 [
                     'id' => $faker->uuid,
                     'name' => $faker->name,
                     'e-mail' => $faker->email,
                     'phone' => $faker->phoneNumber,
-
-                ];
+                ]);
         }
-        AprPersons::insert($data);
 
     }
 }
