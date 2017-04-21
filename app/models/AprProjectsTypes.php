@@ -3,17 +3,17 @@
 namespace App\models;
 
 
-class AprPersons extends BaseModel
+class AprProjectsTypes extends BaseModel
 {
     /**
      * Table name
      * @var string
      */
-    protected $table = 'apr_persons';
+    protected $table = 'apr_projects_types';
 
     /**
      * Fields which will be manipulated
      * @var array
      */
-    protected $fillable = ['id', 'name', 'e-mail', 'phone'];
+    protected $fillable = ['id', 'name', 'description'];
 }
