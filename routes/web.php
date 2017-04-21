@@ -11,19 +11,8 @@
 |
 */
 
-use App\models\AprPersons;
 
-Route::get('/', function () {
+Route::get('/persons', [
+    'uses' => 'AprPersonsController@index'
+]);
 
-    return AprPersons::get();
-});
-
-Route::get('/new-person', function () {
-
-    return AprPersons::create([
-        'id' => \Ramsey\Uuid\Uuid::uuid4(),
-        'name' => 'Milda',
-        'e-mail' => 'milda@inbox.lt',
-        'phone' => '+3706389564',
-    ]);
-});
