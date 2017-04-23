@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+
 use App\models\AprPersons;
 use Illuminate\Routing\Controller;
 
@@ -15,7 +16,7 @@ class AprPersonsController extends Controller {
 	{
 		return AprPersons::orderBy('created_at', 'desc')//builder
             //->where('count' > 5)//builder
-            ->select('id','name', 'e-mail')//builder
+            ->select('id','name', 'client_type')//builder
             ->get();//data
 
 	}
