@@ -11,6 +11,7 @@ namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Ramsey\Uuid\Uuid;
 
 class BaseModel extends Model
 {
@@ -25,14 +26,15 @@ class BaseModel extends Model
         parent::boot();
 
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string)$model->generateNewId();
+            $model->{$model->getKeyName()} = (string)$model->generateNewId(); // getKeyName - Model aprasyta f-ja
         });
     }
     public function generateNewId()
     {
-        if(isset($this->attributes['id'])) {
+        if(isset($this->attributes['id'])) { //attributes - key sinonimas, isset - is set (ar nustatyta)
             return $this->attributes['id'];
         }
-        return uuid4();
+
+        return Uuid::uuid4();
     }
 }
