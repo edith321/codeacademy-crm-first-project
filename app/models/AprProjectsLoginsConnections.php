@@ -3,8 +3,11 @@
 namespace App\models;
 
 
-class AprProjectsLoginsConnections extends BaseModel
+use Illuminate\Database\Eloquent\Model;
+
+class AprProjectsLoginsConnections extends Model
 {
+    public $updated_at = false;
     /**
      * Table name
      * @var string

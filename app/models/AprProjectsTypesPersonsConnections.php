@@ -3,13 +3,16 @@
 namespace App\models;
 
 
-class AprProjectsTypesPersonsConnections extends BaseModel
+use Illuminate\Database\Eloquent\Model;
+
+class AprProjectsTypesPersonsConnections extends Model
 {
+    public $updated_at = false;
     /**
      * Table name
      * @var string
      */
-    protected $table = 'apr_persons';
+    protected $table = 'apr_projects_types_persons_connections';
 
     /**
      * Fields which will be manipulated

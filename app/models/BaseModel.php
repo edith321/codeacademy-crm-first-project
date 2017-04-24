@@ -29,9 +29,10 @@ class BaseModel extends Model
             $model->{$model->getKeyName()} = (string)$model->generateNewId(); // getKeyName - Model aprasyta f-ja
         });
     }
+
     public function generateNewId()
     {
-        if(isset($this->attributes['id'])) { //attributes - key sinonimas, isset - is set (ar nustatyta)
+        if (isset($this->attributes['id'])) { //attributes - key sinonimas, isset - is set (ar nustatyta)
             return $this->attributes['id'];
         }
 
