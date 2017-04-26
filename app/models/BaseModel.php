@@ -17,6 +17,7 @@ class BaseModel extends Model
 {
     use SoftDeletes;
     public $incrementing = false;
+    protected $hidden = ['count', 'deleted_at', 'updated_at', 'created_at'];
 
     /**
      * Boot function from laravel.

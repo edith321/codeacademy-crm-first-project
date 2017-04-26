@@ -1,30 +1,35 @@
 <?php namespace App\Http\Controllers;
 
-
-use App\models\AprPersons;
+use App\models\AprClients;
+use App\models\AprProjects;
 use Illuminate\Routing\Controller;
 
-class AprPersonsController extends Controller {
+class AprClientsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /aprpersons
+	 * GET /aprcliients
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        return AprPersons::with(['projectsTypesPersonsConnectionsData', 'clientsPersonsTypesConnectionsData'])->get();
-		/*return AprPersons::orderBy('created_at', 'desc')//builder
-            //->where('count' > 5)//builder
-            ->select('id','name', 'client_type')//builder
-            ->get();//data*/
+	    return AprClients::with(['projectsData', 'clientsPersonsTypesConnectionsData'])->get();
 
-	}
+	    /*AprClients::all();
+
+	    $configuration = [
+            "example" => "ExampleData",
+            "client" => AprClients::with(['projects', 'clientsTypes'])->get(),
+        ];
+
+	    return view('data', $configuration);*/
+
+    }
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /aprpersons/create
+	 * GET /aprcliients/create
 	 *
 	 * @return Response
 	 */
@@ -35,7 +40,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /aprpersons
+	 * POST /aprcliients
 	 *
 	 * @return Response
 	 */
@@ -46,7 +51,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /aprpersons/{id}
+	 * GET /aprcliients/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -58,7 +63,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /aprpersons/{id}/edit
+	 * GET /aprcliients/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -70,7 +75,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /aprpersons/{id}
+	 * PUT /aprcliients/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -82,7 +87,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /aprpersons/{id}
+	 * DELETE /aprcliients/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

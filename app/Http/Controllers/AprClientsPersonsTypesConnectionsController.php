@@ -1,30 +1,23 @@
 <?php namespace App\Http\Controllers;
 
-
-use App\models\AprPersons;
 use Illuminate\Routing\Controller;
 
-class AprPersonsController extends Controller {
+class AprClientsPersonsTypesConnectionsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /aprpersons
+	 * GET /aprclientspersonstypesconnections
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        return AprPersons::with(['projectsTypesPersonsConnectionsData', 'clientsPersonsTypesConnectionsData'])->get();
-		/*return AprPersons::orderBy('created_at', 'desc')//builder
-            //->where('count' > 5)//builder
-            ->select('id','name', 'client_type')//builder
-            ->get();//data*/
-
+		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /aprpersons/create
+	 * GET /aprclientspersonstypesconnections/create
 	 *
 	 * @return Response
 	 */
@@ -35,7 +28,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /aprpersons
+	 * POST /aprclientspersonstypesconnections
 	 *
 	 * @return Response
 	 */
@@ -46,7 +39,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /aprpersons/{id}
+	 * GET /aprclientspersonstypesconnections/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -58,7 +51,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /aprpersons/{id}/edit
+	 * GET /aprclientspersonstypesconnections/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -70,7 +63,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /aprpersons/{id}
+	 * PUT /aprclientspersonstypesconnections/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -82,7 +75,7 @@ class AprPersonsController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /aprpersons/{id}
+	 * DELETE /aprclientspersonstypesconnections/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

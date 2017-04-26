@@ -11,9 +11,22 @@
 |
 */
 
+Route::get('/', function() {
+   return view('welcome');
+});
 
 Route::get('/persons', [
     'uses' => 'AprPersonsController@index'
+]);
+Route::get('/clients', [
+    'uses' => 'AprClientsController@index'
+    ]);
+
+Route::get('/projects', [
+    'uses' => 'AprProjectsController@index'
+]);
+Route::get('/loginsConnections', [
+    'uses' => 'AprProjectsLoginsConnectionsController@index'
 ]);
 
 Route::group(['prefix' => 'people'], function () {

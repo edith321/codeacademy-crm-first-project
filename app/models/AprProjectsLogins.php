@@ -16,4 +16,9 @@ class AprProjectsLogins extends BaseModel
      * @var array
      */
     protected $fillable = ['id', 'login_places_id', 'user_name', 'password', 'login_url'];
+
+    public function loginsPlacesData()
+    {
+        return $this->hasOne(AprLoginsPlaces::class, 'id', 'login_places_id');
+    }
 }

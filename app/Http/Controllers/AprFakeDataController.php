@@ -18,6 +18,10 @@ use Illuminate\Http\Request;
 
 class AprFakeDataController extends Controller
 {
+    /**
+     * Generates Persons data
+     * @param int $count
+     */
     public function generatePersons(int $count)
     {
         $faker = Factory::create($count);
@@ -35,6 +39,11 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates Clients and client types data
+     * @param int $count
+     *
+     */
     public function generateClients(int $count)
     {
         $faker = Factory::create($count);
@@ -43,13 +52,17 @@ class AprFakeDataController extends Controller
         for ($i = 0; $i < $count; $i++) {
             AprClients::create($data[] =
                 [
-                    'name' => $faker->name,
+                    'name' => $faker->randomElement(['Pirmas', 'Antras', 'Trecias']),
                     'client_type' => $faker->randomElement(['F', 'J'])
                 ]);
         }
 
     }
 
+    /**
+     * Generates clients occupation types
+     * @param int $count
+     */
     public function generateClientsPersonsTypes(int $count)
     {
         $faker = Factory::create($count);
@@ -65,6 +78,10 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates connections between clients, client types, persons, adds description
+     * @param int $count
+     */
     public function generateClientsPersonsTypesConnections(int $count)
     {
         $faker = Factory::create($count);
@@ -82,6 +99,11 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates employee occupation types
+     * @param int $count
+     *
+     */
     public function generateEmployeeTypes(int $count)
     {
         $faker = Factory::create($count);
@@ -97,6 +119,11 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates login places adds description
+     * @param int $count
+     *
+     */
     public function generateLoginsPlaces(int $count)
     {
         $faker = Factory::create($count);
@@ -112,6 +139,10 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates projects
+     * @param int $count
+     */
     public function generateProjects(int $count)
     {
         $faker = Factory::create($count);
@@ -129,6 +160,11 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates logins
+     * @param int $count
+     *
+     */
     public function generateProjectsLogins(int $count)
     {
         $faker = Factory::create($count);
@@ -145,6 +181,10 @@ class AprFakeDataController extends Controller
         }
     }
 
+    /**
+     *
+     * @param int $count
+     */
     public function generateProjectsLoginsConnections(int $count)
     {
         $faker = Factory::create($count);
@@ -160,6 +200,11 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates project types and description
+     * @param int $count
+     *
+     */
     public function generateProjectsTypes(int $count)
     {
         $faker = Factory::create($count);
@@ -175,6 +220,10 @@ class AprFakeDataController extends Controller
 
     }
 
+    /**
+     * Generates connections between projects, persons and employee types
+     * @param int $count
+     */
     public function generateProjectsTypesPersonsConnections(int $count)
     {
         $faker = Factory::create($count);
