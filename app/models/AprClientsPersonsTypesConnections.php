@@ -25,8 +25,8 @@ class AprClientsPersonsTypesConnections extends Model
     {
         return $this->hasOne(AprPersons::class, 'id', 'persons_id');
     }
-    public function clientsData()
+    public function clientsPersonsTypesData()
     {
-        return $this->hasOne(AprClients::class, 'id', 'client_id');
+        return $this->hasOne(AprClientsPersonsTypes::class, 'id', 'client_type_id');
     }
 }

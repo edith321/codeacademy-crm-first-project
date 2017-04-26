@@ -25,8 +25,8 @@ class AprProjectsLoginsConnections extends Model
     {
         return $this->hasMany(AprProjectsLogins::class, 'id', 'login_id')->with('loginsPlacesData');
     }
-    public function projectsData()
+    /*public function projectsData()
     {
         return $this->hasOne(AprProjects::class, 'id', 'projects_id');
-    }
+    }*/
 }

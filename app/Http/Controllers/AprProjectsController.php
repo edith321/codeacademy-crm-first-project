@@ -13,9 +13,15 @@ class AprProjectsController extends Controller {
 	 */
 	public function index()
 	{
-        return AprProjects::with(['clientsData', 'projectsTypesData', 'projectsLoginsConnections'])->get();
-        return AprProjects::get();
-	}
+        //return AprProjects::with(['clientsData'])->get();
+
+       $configuration = [];
+        $configuration["projects"] = AprProjects::with(['clientsData', 'projectsTypesPersonsConnections'])->get()->toArray();
+        //$configuration['totalCount'] = sizeof($configuration['clients']);
+
+        return view('content.projects', $configuration);
+
+    }
 
 	/**
 	 * Show the form for creating a new resource.

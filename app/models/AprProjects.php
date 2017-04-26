@@ -27,8 +27,10 @@ class AprProjects extends BaseModel
     }
     public function projectsLoginsConnections()
     {
-        return $this->hasMany(AprProjectsLoginsConnections::class, 'project_id', 'id');
+        return $this->hasMany(AprProjectsLoginsConnections::class, 'project_id', 'id')->with(['projectsLoginsData']);
     }
-
-
+    public function projectsTypesPersonsConnections()
+    {
+        return $this->hasMany(AprProjectsTypesPersonsConnections::class, 'projejects_id', 'id')->with(['personsData', 'employeeTypesData']);
+    }
 }

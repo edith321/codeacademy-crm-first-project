@@ -14,16 +14,13 @@ class AprClientsController extends Controller {
 	 */
 	public function index()
 	{
-	    return AprClients::with(['projectsData', 'clientsPersonsTypesConnectionsData'])->get();
 
-	    /*AprClients::all();
 
-	    $configuration = [
-            "example" => "ExampleData",
-            "client" => AprClients::with(['projects', 'clientsTypes'])->get(),
-        ];
+        $configuration = [];
+        $configuration["clients"] = AprClients::with(['projectsData'])->get();
+	    $configuration['totalCount'] = sizeof($configuration['clients']);
 
-	    return view('data', $configuration);*/
+	    return view('content.clients', $configuration);
 
     }
 

@@ -24,7 +24,7 @@ class AprClients extends BaseModel
 
     public function projectsData()
     {
-        return $this->hasMany(AprProjects::class, 'clients_id', 'id');
+        return $this->hasMany(AprProjects::class, 'clients_id', 'id')->with(['projectsTypesData', 'projectsLoginsConnections']);
     }
     public function clientsPersonsTypesConnectionsData()
     {

@@ -23,6 +23,6 @@ class AprPersons extends BaseModel
     }
     public function clientsPersonsTypesConnectionsData()
     {
-        return $this->hasMany(AprClientsPersonsTypesConnections::class, 'persons_id', 'id')->with(['personsData', 'clientsData']);
+        return $this->hasMany(AprClientsPersonsTypesConnections::class, 'persons_id', 'id')->with(['personsData']);
     }
 }

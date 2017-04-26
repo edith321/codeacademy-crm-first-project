@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function() {
-   return view('welcome');
+   return view('main');
 });
 
 Route::get('/persons', [
@@ -69,6 +69,10 @@ Route::group(['prefix' => 'connections'], function () {
         'uses' => 'AprFakeDataController@generateProjectsTypesPersonsConnections'
     ]);
 });
+
+Route::get('/generate-fake-data/projects/{count?}', [
+    'uses' => 'AprProjectsController@generateProjects'
+]);
 
 
 
